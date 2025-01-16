@@ -32,3 +32,20 @@ watch(
     <div>{{ post.body }}</div>
   </div>
 </template>
+
+
+<style scoped>
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+.text-gray-500 {
+  color: #6b7280;
+}
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+.text-blue-500 {
+  color: #3b82f6;
+}
+</style>

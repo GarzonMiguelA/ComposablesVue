@@ -26,3 +26,17 @@
       <p><strong>Geo:</strong> Lat: {{ user.address.geo.lat }}, Lng: {{ user.address.geo.lng }}</p>
     </div>
 </template>
+
+
+<style scoped>
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+p {
+  margin: 0.5rem 0;
+}
+strong {
+  font-weight: bold;
+}
+</style>
