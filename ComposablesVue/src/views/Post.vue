@@ -3,14 +3,16 @@ import { ref, watch } from "vue";
 import { useRoute } from "vue-router";
 import llegirPost from "../composables/llegirPost";
 
+/* Obtenemos info de la ruta y llamamos a composable llegirPost*/
 const route = useRoute();
 const { post, leerPost, user, leerUsuario } = llegirPost();
 
-const fetchPostAndUser = async (postId) => {
-  await leerPost(postId);
-  await leerUsuario(post.value.userId);
+const fetchPostAndUser = async (postId) => {// Creamos función asíncrona que coge datos de post y user.
+  await leerPost(postId); // Llamamos a leerPost con ID del post para obtener datos del post.
+  await leerUsuario(post.value.userId);//Lo mismo que la linea anterior pero con el user.
 };
 
+//Creamos un watch para observar cambios en la ruta y llamar a fetchPostAndUser.
 watch(
   () => route.params.id,
   (newId) => {
@@ -20,6 +22,7 @@ watch(
   },
   { immediate: true }
 );
+
 </script>
 
 <template>
