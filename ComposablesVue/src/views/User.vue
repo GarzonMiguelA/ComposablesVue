@@ -4,17 +4,19 @@
   import { ref, onMounted } from "vue";
   import { useRoute } from "vue-router";
   
-  const route = useRoute();
-  const user = ref(null);
   
-  const fetchUser = async (userId) => {
+  const route = useRoute();//Obtenemos informacion de la ruta actual
+  const user = ref(null); // Creamos varaible reactiva para guardar datos del user
+  
+  const fetchUser = async (userId) => { // Creamos función asíncrona para coger datos del user por ID.
     const response = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`);
-    user.value = await response.json();
+    user.value = await response.json();// Y asignamos datos del user a la const.
   };
   
-  onMounted(() => {
-    fetchUser(route.params.id);
+  onMounted(() => { //Ejecutamos la linea 17 cuando se monta
+    fetchUser(route.params.id); //Obtenemos ID de usuario desde la URL y llamamos a la fucion para coger datos
   });
+
 </script>
 
 <template>
