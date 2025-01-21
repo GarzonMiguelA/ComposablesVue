@@ -10,6 +10,7 @@ export default function llegirPost() {
     const post = ref(null);
     const user = ref(null);
 
+    
     /* Leemos todas las URL de posts */
     const leerTodos = async () => {
         const response = await fetch(URL_POSTS);
